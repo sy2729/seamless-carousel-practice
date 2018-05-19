@@ -4,8 +4,8 @@ for(let i = 0; i < length; i++) {
     button.className = `btn${i}`;
     $('.buttonWrap').append(button);
 }
-console.log($('.buttonWrap').children())
 
+// hardcode the trigger;
 // $('.btn1').on('click', function() {
 //     $('.carousel').css(
 //         { transform: `translateX(${-530 * 0}px)`}
@@ -31,7 +31,7 @@ console.log($('.buttonWrap').children())
 
 
 var allButtons = $('.buttonWrap > div');
-
+$('.buttonWrap > div').eq(0).addClass('active');
 for (let i = 0; i < allButtons.length; i++) {
     $(allButtons[i]).on('click', function(e) {
         //DOM Method
@@ -57,6 +57,17 @@ for (let i = 0; i < allButtons.length; i++) {
 var id = 0;
 var timer = setInterval(() => {
     id++;
-    $('.buttonWrap > div').eq(id%4).trigger('click')
-    console.log(id);
-}, 2000)
+    $('.buttonWrap > div').eq(id%4).trigger('click').addClass('active')
+    .siblings().removeClass('active');
+}, 4000)
+
+$('.carousel').on('mouseenter', function() {
+    window.clearInterval(timer)
+});
+
+$('.carousel').on('mouseout', function () {
+    timer = setInterval(() => {
+        id++;
+        $('.buttonWrap > div').eq(id % 4).trigger('click').addClass('active')
+    }, 4000)    
+})
