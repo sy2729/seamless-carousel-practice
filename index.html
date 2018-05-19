@@ -5,9 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        .wrap {
+            height: 430px;
+            width: 530px;
+            overflow: hidden;
+            margin: 40px auto;
+        }
+        .wrap > .carousel{
+            display: flex;
+            align-items: flex-start;
+            transition: all 1s ease-in-out;
+        }
+
+        .buttonWrap {
+            display: flex;
+            width: 400px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        .buttonWrap > div {
+            margin: 0 10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 0, 0, 0.6);
+            display: block;
+            cursor: pointer;
+        }
+        .buttonWrap > div:hover {
+
+        }
+    </style>
 </head>
 <body>
-    Hello World
+    
+    <div class="wrap">
+        <div class="carousel">
+            <img src="./img/1.jpeg" alt="image">
+            <img src="./img/2.jpeg" alt="image">
+            <img src="./img/3.jpeg" alt="image">
+            <img src="./img/4.jpeg" alt="image">
+        </div>
+    </div>
+
+    <div class="buttonWrap">
+        <!-- <button class="btn1">Picture 1</button>
+        <button class="btn2">Picture 2</button>
+        <button class="btn3">Picture 3</button>
+        <button class="btn4">Picture 4</button> -->
+    </div>
 
 
     <script src="./jquery.js"></script>
