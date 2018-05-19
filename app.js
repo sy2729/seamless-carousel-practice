@@ -31,7 +31,7 @@ for(let i = 0; i < length; i++) {
 
 
 var allButtons = $('.buttonWrap > div');
-$('.buttonWrap > div').eq(0).addClass('active');
+setClass($('.buttonWrap > div'), 0, 'active');
 for (let i = 0; i < allButtons.length; i++) {
     $(allButtons[i]).on('click', function(e) {
         //DOM Method
@@ -57,8 +57,8 @@ for (let i = 0; i < allButtons.length; i++) {
 var id = 0;
 var timer = setInterval(() => {
     id++;
-    $('.buttonWrap > div').eq(id%4).trigger('click').addClass('active')
-    .siblings().removeClass('active');
+    triggerButton($('.buttonWrap > div'), id % 4, 'click');
+    setClass($('.buttonWrap > div'), id % 4, 'active');
 }, 4000)
 
 $('.carousel').on('mouseenter', function() {
@@ -68,6 +68,19 @@ $('.carousel').on('mouseenter', function() {
 $('.carousel').on('mouseout', function () {
     timer = setInterval(() => {
         id++;
-        $('.buttonWrap > div').eq(id % 4).trigger('click').addClass('active')
+        triggerButton($('.buttonWrap > div'), id % 4, 'click');
+        setClass($('.buttonWrap > div'), id%4, 'active');
     }, 4000)    
 })
+
+
+// reusable function
+function triggerButton (node, index, event) {
+    node.eq(index).trigger(event);
+}
+
+
+function setClass(node, index, className) {
+    node.eq(index).addClass('active')
+        .siblings().removeClass(className);
+}
