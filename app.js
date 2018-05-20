@@ -51,6 +51,7 @@ for (let i = 0; i < allButtons.length; i++) {
         $('.carousel').css({
             transform: `translateX(${-n*530}px)`
         })
+        setClass($('.buttonWrap > div'), n, 'active');
     })
 }
 
