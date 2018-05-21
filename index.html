@@ -12,7 +12,9 @@
             width: 530px;
             overflow: hidden;
             margin: 40px auto;
+            position: relative;
         }
+<<<<<<< HEAD
         .wrap > .carousel {
             position: relative;
         }
@@ -25,6 +27,15 @@
         .wrap > .carousel > img:nth-child(1){
             transform: translateX(0);
             z-index: 1;
+=======
+        .wrap > .carousel > img{
+            position: absolute;
+            transition: all 1s ease-in-out;
+            transform: translateX(100%);
+        }
+        .wrap > .carousel > img:nth-child(1){
+            transform: translateX(0%);   
+>>>>>>> backup
         }
         .buttonWrap {
             display: flex;
@@ -44,10 +55,12 @@
             display: block;
             cursor: pointer;
             transition: all .5s;
+            z-index: 2;
         }
         .buttonWrap > div.active {
             background: rgba(255, 0, 0, 0.6);
         }
+<<<<<<< HEAD
         .wrap > .carousel > img.current{
             transform: translateX(0);
             z-index: 1;
@@ -58,6 +71,24 @@
         .wrap > .carousel > img.after{
             transform: translateX(-100%);
             z-index: 1;
+=======
+
+        .wrap > .carousel > img.current {
+            transform: translateX(0);
+            z-index: 1;
+            top: 0;
+        }
+        .wrap > .carousel > img.before {
+            transform: translateX(100%);
+            top: 0;
+            z-index: -10;
+        }
+        .wrap > .carousel > img.after {
+            transform: translateX(-100%);
+            z-index: 1;
+            top: 0;
+
+>>>>>>> backup
         }
     </style>
 </head>
@@ -68,7 +99,11 @@
             <img src="./img/1.jpeg" alt="image">
             <img src="./img/2.jpeg" alt="image">
             <img src="./img/3.jpeg" alt="image">
+<<<<<<< HEAD
 <!--             <img src="./img/4.jpeg" alt="image"> -->
+=======
+            <!-- <img src="./img/4.jpeg" alt="image"> -->
+>>>>>>> backup
         </div>
     </div>
 
