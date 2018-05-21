@@ -13,12 +13,19 @@
             overflow: hidden;
             margin: 40px auto;
         }
-        .wrap > .carousel{
-            display: flex;
-            align-items: flex-start;
-            transition: all 1s ease-in-out;
+        .wrap > .carousel {
+            position: relative;
         }
-
+        .wrap > .carousel > img{
+            transition: all 1s ease-in-out;
+            position: absolute;
+            top: 0;
+            transform: translateX(100%);
+        }
+        .wrap > .carousel > img:nth-child(1){
+            transform: translateX(0);
+            z-index: 1;
+        }
         .buttonWrap {
             display: flex;
             width: 400px;
@@ -26,6 +33,7 @@
             justify-content: center;
             position: relative;
             margin-top: -80px;
+            z-index: 2;
         }
         .buttonWrap > div {
             margin: 0 10px;
@@ -40,6 +48,17 @@
         .buttonWrap > div.active {
             background: rgba(255, 0, 0, 0.6);
         }
+        .wrap > .carousel > img.current{
+            transform: translateX(0);
+            z-index: 1;
+        }
+        .wrap > .carousel > img.before{
+            transform: translateX(100%);
+        }
+        .wrap > .carousel > img.after{
+            transform: translateX(-100%);
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -49,15 +68,12 @@
             <img src="./img/1.jpeg" alt="image">
             <img src="./img/2.jpeg" alt="image">
             <img src="./img/3.jpeg" alt="image">
-            <img src="./img/4.jpeg" alt="image">
+<!--             <img src="./img/4.jpeg" alt="image"> -->
         </div>
     </div>
 
     <div class="buttonWrap">
-        <!-- <button class="btn1">Picture 1</button>
-        <button class="btn2">Picture 2</button>
-        <button class="btn3">Picture 3</button>
-        <button class="btn4">Picture 4</button> -->
+    
     </div>
 
 
